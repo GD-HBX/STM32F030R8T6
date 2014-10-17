@@ -1,0 +1,73 @@
+Dependencies for Project 'FLASH_LED', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x54411F18)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (my_lib/DMA.h)(0x53DFDB49)
+I (SYSCFG.h)(0x5313386A)
+I (EXTI.h)(0x531338E3)
+I (NVIC.h)(0x53133A60)
+I (TIMx.h)(0x533935AB)
+I (TEST.h)(0x53B2DA86)
+I (RTC.h)(0x5375AD88)
+I (my_lib/I2C.h)(0x53B9697C)
+I (my_lib/USART1.h)(0x54160982)
+I (ASCII.h)(0x53E630CE)
+I (my_lib/log.h)(0x54312AB2)
+I (my_lib/SPI.h)(0x543FF279)
+F (.\SYSCFG.c)(0x53B964B5)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\syscfg.o --omf_browse .\syscfg.crf --depend .\syscfg.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\TEST.c)(0x53B96634)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\test.o --omf_browse .\test.crf --depend .\test.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (my_lib/DMA.h)(0x53DFDB49)
+I (ADC.h)(0x533AB8C2)
+I (TIMx.h)(0x533935AB)
+I (EXTI.h)(0x531338E3)
+I (NVIC.h)(0x53133A60)
+I (RTC.h)(0x5375AD88)
+I (ASCII.h)(0x53E630CE)
+I (my_lib/I2C.h)(0x53B9697C)
+F (.\my_lib\startup.s)(0x54401646)(--cpu Cortex-M0 -g --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\NVIC.c)(0x53B964B2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\nvic.o --omf_browse .\nvic.crf --depend .\nvic.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\EXTI.c)(0x53B964B3)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\exti.o --omf_browse .\exti.crf --depend .\exti.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\CRC.c)(0x53B964B6)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\crc.o --omf_browse .\crc.crf --depend .\crc.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\GPIOx.c)(0x53B964B2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\gpiox.o --omf_browse .\gpiox.crf --depend .\gpiox.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\RCC.c)(0x53B964B2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\rcc.o --omf_browse .\rcc.crf --depend .\rcc.d)
+I (my_lib/register.h)(0x542D5AB7)
+F (.\ADC.c)(0x53B964B1)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\adc.o --omf_browse .\adc.crf --depend .\adc.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (ADC.h)(0x533AB8C2)
+F (.\TIMx.c)(0x53B964B2)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\timx.o --omf_browse .\timx.crf --depend .\timx.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (TIMx.h)(0x533935AB)
+F (.\RTC.c)(0x53B964B4)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\rtc.o --omf_browse .\rtc.crf --depend .\rtc.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (RTC.h)(0x5375AD88)
+I (ASCII.h)(0x53E630CE)
+F (.\ASCII.c)(0x53E630D5)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\ascii.o --omf_browse .\ascii.crf --depend .\ascii.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (ASCII.h)(0x53E630CE)
+F (.\24c02n.c)(0x53B96655)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\24c02n.o --omf_browse .\24c02n.crf --depend .\24c02n.d)
+I (my_lib/register.h)(0x542D5AB7)
+I (my_lib/I2C.h)(0x53B9697C)
+F (.\my_lib\I2C.c)(0x53B96980)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\i2c.o --omf_browse .\i2c.crf --depend .\i2c.d)
+I (my_lib\register.h)(0x542D5AB7)
+I (my_lib\I2C.h)(0x53B9697C)
+I (my_lib\DMA.h)(0x53DFDB49)
+F (.\my_lib\DMA.c)(0x544015B8)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\dma.o --omf_browse .\dma.crf --depend .\dma.d)
+I (my_lib\register.h)(0x542D5AB7)
+I (my_lib\DMA.h)(0x53DFDB49)
+F (.\my_lib\USART1.c)(0x5433D4A5)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\usart1.o --omf_browse .\usart1.crf --depend .\usart1.d)
+I (my_lib\register.h)(0x542D5AB7)
+I (my_lib\USART1.h)(0x54160982)
+I (my_lib\DMA.h)(0x53DFDB49)
+F (.\my_lib\log.c)(0x5431279F)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\log.o --omf_browse .\log.crf --depend .\log.d)
+I (my_lib\register.h)(0x542D5AB7)
+I (my_lib\USART1.h)(0x54160982)
+I (my_lib\log.h)(0x54312AB2)
+F (.\my_lib\SPI.c)(0x54411EE9)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
+I (my_lib\register.h)(0x542D5AB7)
+I (my_lib\SPI.h)(0x543FF279)

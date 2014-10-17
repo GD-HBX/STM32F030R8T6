@@ -1,0 +1,10 @@
+.\test.o: TEST.c
+.\test.o: my_lib/register.h
+.\test.o: my_lib/DMA.h
+.\test.o: ADC.h
+.\test.o: TIMx.h
+.\test.o: EXTI.h
+.\test.o: NVIC.h
+.\test.o: RTC.h
+.\test.o: ASCII.h
+.\test.o: my_lib/I2C.h

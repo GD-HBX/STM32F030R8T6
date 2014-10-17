@@ -1,0 +1,386 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 THUMB
+    2 00000000                 AREA             init_stack,DATA,NOINIT
+    3 00000000 00000200 
+                       s_size  EQU              0x200
+    4 00000000                 SPACE            s_size
+    5 00000200         stack_End
+    6 00000200         
+    7 00000200                 AREA             Vector,DATA,READONLY
+    8 00000000 00000000        DCD              stack_End
+    9 00000004 00000000        DCD              Start_up
+   10 00000008                 IMPORT           BUTTON_PA0_DOWN [WEAK]
+   11 00000008                 IMPORT           CUOWU [WEAK]
+   12 00000008                 IMPORT           DMA1_Handler [WEAK]
+   13 00000008                 IMPORT           DMA2_3_Handler ;[WEAK];ÎÒ²Ý£¬¼Ó
+                                                            ÁË[WEAK]ºó¾ÓÈ»²»°ÑD
+                                                            MA2_3_HandlerµÄÖµ·Å
+                                                            µ½ÏòÁ¿±íÀï(´Ëº¯ÊýÔÚ
+                                                            DMA.cÖÐÓÐÉùÃ÷µÄ)£¬Î
+                                                            ÞÓï
+   14 00000008                 IMPORT           I2C1_Handler [WEAK]
+   15 00000008                 IMPORT           SPI1_Handler [WEAK]
+   16 00000008                 IMPORT           USART1_Handler [WEAK]
+   17 00000008 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         DCD              0,CUOWU,0,0,0,0,0,0,0,0,0,0,0,0
+   18 00000040 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         DCD              0,0,0,0,0,BUTTON_PA0_DOWN,0,0,0
+,DMA1_Handler,DMA2_3_Handler,0,0,0,0,0,0,0,0,0,0,0,0,I2C1_Handler,0,SPI1_Handle
+r,0,USART1_Handler
+   19 000000B0         
+   20 000000B0                 AREA             RESET,CODE
+   21 00000000         Start_up
+                               PROC
+   22 00000000                 IMPORT           main        ;×Ô¼ºÐ´µÄ£¬²»µ÷ÓÃ¿â
+                                                            
+   23 00000000                 IMPORT           __main      ;ÕâÊÇµ÷ÓÃ¿âµÄ
+   24 00000000                 IMPORT           RCC_INIT
+   25 00000000         ;ÄÚ´æÇåÀí R4:¿ªÊ¼µØÖ·.R5:µ±Ç°´ÎÊý.R6:´ÎÊý.R7:Ìî³äÖµ
+   26 00000000 4C04            LDR              R4,SRAM_AD
+   27 00000002 4D03            LDR              R5,ZERO
+   28 00000004 4E04            LDR              R6,SRAM_SIZE
+   29 00000006 4F02            LDR              R7,ZERO
+   30 00000008         clean_SRAM
+   31 00000008 5167            STR              R7,[R4,R5]
+   32 0000000A 3504            ADDS             R5,#4
+   33 0000000C 42B5            CMP              R5,R6
+   34 0000000E D4FB            BMI              clean_SRAM
+   35 00000010                 ALIGN
+   36 00000010 00000000 
+                       ZERO    DCD              0
+   37 00000014 20000000 
+                       SRAM_AD DCD              0x20000000
+   38 00000018 00002000 
+                       SRAM_SIZE
+                               DCD              8*1024
+   39 0000001C         ;ÄÚ´æÇåÀí
+   40 0000001C 4801            LDR              R0,=RCC_INIT
+   41 0000001E 4780            BLX              R0
+   42 00000020         ;LDR R0,=main;×Ô¼ºÐ´µÄ£¬²»µ÷ÓÃ¿â
+   43 00000020 4801            LDR              R0,=__main  ;Õâ¸öÊÇµ÷ÓÃ¿âµÄ
+   44 00000022 4700            BX               R0
+   45 00000024                 ALIGN
+   46 00000024                 ENDP
+   47 00000024         
+   48 00000024 00000000 
+              00000000         AREA             rewrite,code
+   49 00000000         ;IMPORT __use_no_semihosting
+   50 00000000                 EXPORT           __user_initial_stackheap ;ÖØÐ´Õ
+                                                            â¸öº¯Êý£¬ÒòÎªÕâ¸öº¯
+                                                            Êýµ÷ÓÃÁËÖ÷»úº¯Êý
+   51 00000000         ;EXPORT _sys_exit
+   52 00000000         __user_initial_stackheap
+   53 00000000         ;LDR R0,=ZERO
+   54 00000000 2000            MOVS             R0,#0
+   55 00000002 4903            LDR              R1,=stack_End
+   56 00000004 2200            MOVS             R2,#0
+   57 00000006 4B03            LDR              R3,=stack_size
+   58 00000008 4770            BX               LR
+   59 0000000A 00 00           ALIGN
+   60 0000000C 00000200 
+                       stack_size
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                               DCD              s_size
+   61 00000010         ;_sys_exit
+   62 00000010         
+   63 00000010         
+   64 00000010         
+   65 00000010         
+   66 00000010         
+   67 00000010                 END
+              00000000 
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=.\startu
+p.d -o.\startup.o -Id:\Keil_v5\ARM\RV31\INC -Id:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1
+.1\CMSIS\Include -Id:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include 
+--list=.\startup.lst my_lib\startup.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+init_stack 00000000
+
+Symbol: init_stack
+   Definitions
+      At line 2 in file my_lib\startup.s
+   Uses
+      None
+Comment: init_stack unused
+stack_End 00000200
+
+Symbol: stack_End
+   Definitions
+      At line 5 in file my_lib\startup.s
+   Uses
+      At line 8 in file my_lib\startup.s
+      At line 55 in file my_lib\startup.s
+
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Vector 00000000
+
+Symbol: Vector
+   Definitions
+      At line 7 in file my_lib\startup.s
+   Uses
+      None
+Comment: Vector unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 20 in file my_lib\startup.s
+   Uses
+      None
+Comment: RESET unused
+SRAM_AD 00000014
+
+Symbol: SRAM_AD
+   Definitions
+      At line 37 in file my_lib\startup.s
+   Uses
+      At line 26 in file my_lib\startup.s
+Comment: SRAM_AD used once
+SRAM_SIZE 00000018
+
+Symbol: SRAM_SIZE
+   Definitions
+      At line 38 in file my_lib\startup.s
+   Uses
+      At line 28 in file my_lib\startup.s
+Comment: SRAM_SIZE used once
+Start_up 00000000
+
+Symbol: Start_up
+   Definitions
+      At line 21 in file my_lib\startup.s
+   Uses
+      At line 9 in file my_lib\startup.s
+Comment: Start_up used once
+ZERO 00000010
+
+Symbol: ZERO
+   Definitions
+      At line 36 in file my_lib\startup.s
+   Uses
+      At line 27 in file my_lib\startup.s
+      At line 29 in file my_lib\startup.s
+
+clean_SRAM 00000008
+
+Symbol: clean_SRAM
+   Definitions
+      At line 30 in file my_lib\startup.s
+   Uses
+      At line 34 in file my_lib\startup.s
+Comment: clean_SRAM used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+__user_initial_stackheap 00000000
+
+Symbol: __user_initial_stackheap
+   Definitions
+      At line 52 in file my_lib\startup.s
+   Uses
+      At line 50 in file my_lib\startup.s
+Comment: __user_initial_stackheap used once
+rewrite 00000000
+
+Symbol: rewrite
+   Definitions
+      At line 48 in file my_lib\startup.s
+   Uses
+      None
+Comment: rewrite unused
+stack_size 0000000C
+
+Symbol: stack_size
+   Definitions
+      At line 60 in file my_lib\startup.s
+   Uses
+      At line 57 in file my_lib\startup.s
+Comment: stack_size used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+s_size 00000200
+
+Symbol: s_size
+   Definitions
+      At line 3 in file my_lib\startup.s
+   Uses
+      At line 4 in file my_lib\startup.s
+      At line 60 in file my_lib\startup.s
+
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+BUTTON_PA0_DOWN 00000000
+
+Symbol: BUTTON_PA0_DOWN
+   Definitions
+      At line 10 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: BUTTON_PA0_DOWN used once
+CUOWU 00000000
+
+Symbol: CUOWU
+   Definitions
+      At line 11 in file my_lib\startup.s
+   Uses
+      At line 17 in file my_lib\startup.s
+Comment: CUOWU used once
+DMA1_Handler 00000000
+
+Symbol: DMA1_Handler
+   Definitions
+      At line 12 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: DMA1_Handler used once
+DMA2_3_Handler 00000000
+
+Symbol: DMA2_3_Handler
+   Definitions
+      At line 13 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: DMA2_3_Handler used once
+I2C1_Handler 00000000
+
+Symbol: I2C1_Handler
+   Definitions
+      At line 14 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: I2C1_Handler used once
+RCC_INIT 00000000
+
+Symbol: RCC_INIT
+   Definitions
+      At line 24 in file my_lib\startup.s
+   Uses
+      At line 40 in file my_lib\startup.s
+Comment: RCC_INIT used once
+SPI1_Handler 00000000
+
+Symbol: SPI1_Handler
+   Definitions
+      At line 15 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: SPI1_Handler used once
+USART1_Handler 00000000
+
+Symbol: USART1_Handler
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+External symbols
+
+   Definitions
+      At line 16 in file my_lib\startup.s
+   Uses
+      At line 18 in file my_lib\startup.s
+Comment: USART1_Handler used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 23 in file my_lib\startup.s
+   Uses
+      At line 43 in file my_lib\startup.s
+Comment: __main used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 22 in file my_lib\startup.s
+   Uses
+      None
+Comment: main unused
+10 symbols
+357 symbols in table

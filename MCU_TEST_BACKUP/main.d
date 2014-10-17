@@ -1,0 +1,15 @@
+.\main.o: main.c
+.\main.o: my_lib/register.h
+.\main.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\main.o: my_lib/DMA.h
+.\main.o: SYSCFG.h
+.\main.o: EXTI.h
+.\main.o: NVIC.h
+.\main.o: TIMx.h
+.\main.o: TEST.h
+.\main.o: RTC.h
+.\main.o: my_lib/I2C.h
+.\main.o: my_lib/USART1.h
+.\main.o: ASCII.h
+.\main.o: my_lib/log.h
+.\main.o: my_lib/SPI.h

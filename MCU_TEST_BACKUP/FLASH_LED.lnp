@@ -1,0 +1,24 @@
+--cpu Cortex-M0
+".\main.o"
+".\syscfg.o"
+".\test.o"
+".\startup.o"
+".\nvic.o"
+".\exti.o"
+".\crc.o"
+".\gpiox.o"
+".\rcc.o"
+".\adc.o"
+".\timx.o"
+".\rtc.o"
+".\ascii.o"
+".\24c02n.o"
+".\i2c.o"
+".\dma.o"
+".\usart1.o"
+".\log.o"
+".\spi.o"
+--strict --scatter "FLASH_LED.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\FLASH_LED.map" -o .\FLASH_LED.axf
