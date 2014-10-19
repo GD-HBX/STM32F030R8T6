@@ -95,7 +95,7 @@ int main(){
 	struct SPI_DATA data;
 	//uc test[] = {0xAA,0x55};
 	data.TxDATA = "Hello World!!";
-	data.TxSIZE = sizeof "Hello World!!" - 1;
+	data.TxSIZE = sizeof "Hello World!!";
 	data.Status = &zhuangtai;
 	dizhi = (ui)&key;
 again:	

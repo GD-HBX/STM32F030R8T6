@@ -2,6 +2,7 @@
 #include "SPI.h"
 
 #define USE_GPIO_PORT 1
+#define FRAME_SIZE 7
 
 enum _SPI_TM{_NONE=0,_T=1,_R=2,_TR=3,_RT=4};
 enum PHASE{_ONE=0,_TWO};
@@ -90,6 +91,13 @@ __inline void _spi_gpio_setting(void){
 		//第三种情况，就是上面的两种GPIO口混用，这里我就不写了，用的时候再写
 	#endif
 }
+#ifdef FRAME_SIZE
+#if ((FRAME_SIZE < 2) || (FRAME_SIZE > 0xF))
+#error "The FRAME_SIZE is not between 0x3(4-bit) and 0xF(16-bit)!"
+#endif
+#else 
+#error "Please define a "FRAME_SIZE" macro!"
+#endif
 
 /*配置spi外设参数*/
 __inline void _spi_common_setting(){
@@ -114,8 +122,8 @@ __inline void _spi_common_setting(){
 	SPI1->SPIx_CR1 |= 1<<2;			//g.MSTR
 	
 	//3.
-	SPI1->SPIx_CR2 &= ~(ui)(0xF<<8);//a.DS//清0
-	SPI1->SPIx_CR2 |= 3<<8;//4bit 		//a.DS，设置DS
+	SPI1->SPIx_CR2 |= 0xF<<8;//a.DS//清0
+	SPI1->SPIx_CR2 &= ~((ui)(0xF-FRAME_SIZE)<<8);//4bit 		//a.DS，设置DS
 	
 	SPI1->SPIx_CR2 |= 1<<2;//b.SSOE
 	

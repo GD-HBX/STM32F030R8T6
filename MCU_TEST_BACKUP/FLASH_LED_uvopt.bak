@@ -143,7 +143,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTARM</Key>
-          <Name>(1010=958,354,1368,900,1)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=91,321,325,858,0)</Name>
+          <Name>(1010=912,639,1322,1185,1)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=91,321,325,858,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -170,9 +170,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>345</LineNumber>
+          <LineNumber>265</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134219862</Address>
+          <Address>134219498</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -181,14 +181,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\my_lib\SPI.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\FLASH_LED\my_lib/SPI.c\265</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>343</LineNumber>
+          <LineNumber>29</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134219852</Address>
+          <Address>134218664</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -197,23 +197,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\my_lib\SPI.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>148</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134218350</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\FLASH_LED\my_lib/SPI.c\29</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -290,7 +274,7 @@
         <Mm>
           <WinNumber>4</WinNumber>
           <SubType>1</SubType>
-          <ItemText>0x20000284</ItemText>
+          <ItemText>0x20000268</ItemText>
         </Mm>
       </MemoryWindow4>
       <Tracepoint>

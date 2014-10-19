@@ -1,5 +1,5 @@
 Dependencies for Project 'FLASH_LED', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x54411F18)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x5443E33E)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (my_lib/register.h)(0x542D5AB7)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
 I (my_lib/DMA.h)(0x53DFDB49)
@@ -68,6 +68,6 @@ F (.\my_lib\log.c)(0x5431279F)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d
 I (my_lib\register.h)(0x542D5AB7)
 I (my_lib\USART1.h)(0x54160982)
 I (my_lib\log.h)(0x54312AB2)
-F (.\my_lib\SPI.c)(0x54411EE9)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
+F (.\my_lib\SPI.c)(0x5443EDAA)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I d:\Keil_v5\ARM\RV31\INC-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.0.3\Device\Include-DSTM32F030-o .\spi.o --omf_browse .\spi.crf --depend .\spi.d)
 I (my_lib\register.h)(0x542D5AB7)
 I (my_lib\SPI.h)(0x543FF279)
